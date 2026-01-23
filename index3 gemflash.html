@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новый мир — Комплексное оснащение кухонь HoReCa: ресторанов, кафе, пекарен</title>
+    <meta name="description" content="Профессиональное оборудование для HoReCa от компании Новый мир. Подбор за 24 часа, гарантия до 24 месяцев, проектирование и монтаж под ключ.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Новый мир — Промышленное оборудование для HoReCa">
+    <meta property="og:description" content="Оснащение ресторанов и кафе под ключ. Тепловое, холодильное и электромеханическое оборудование.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://new-world-horeca.ru">
+    
+    <!-- JSON-LD SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Новый мир",
+      "image": "https://example.com/logo.png",
+      "description": "Продажа и оснащение промышленным оборудованием HoReCa",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Промышленная, 10",
+        "addressLocality": "Москва",
+        "addressCountry": "RU"
+      },
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "telephone": "+78005553535"
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-green: #2D5A27;
+            --accent-green: #4CAF50;
+            --soft-yellow: #FFF9E6;
+            --bright-yellow: #FFD54F;
+            --dark: #333333;
+            --light: #FFFFFF;
+            --gray: #F4F4F4;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        /* Accessibility */
+        :focus-visible {
+            outline: 3px solid var(--accent-green);
+            outline-offset: 2px;
+        }
+
+        /* Typography */
+        h1, h2, h3 { line-height: 1.2; margin-bottom: 1rem; color: var(--primary-green); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+        }
+        .btn-primary { background: var(--primary-green); color: white; }
+        .btn-primary:hover { background: var(--accent-green); transform: translateY(-2px); }
+        .btn-secondary { background: var(--bright-yellow); color: var(--dark); }
+        .btn-secondary:hover { background: #ffca28; transform: translateY(-2px); }
+
+        /* Header & Nav */
+        header {
+            background: var(--light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary-green); }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: var(--transition); }
+        .nav-links a:hover { color: var(--accent-green); }
+
+        /* Mobile Menu */
+        .burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+        .burger span { width: 25px; height: 3px; background: var(--primary-green); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(45, 90, 39, 0.85), rgba(45, 90, 39, 0.85)), 
+                        url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=2070') no-repeat center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero h1 { color: white; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 40px; }
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .metric-item { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
+        .metric-item span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--bright-yellow); }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+
+        /* Benefits */
+        .bg-soft { background-color: var(--soft-yellow); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .benefit-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        .benefit-card:hover { transform: translateY(-10px); }
+        .benefit-card h3 { color: var(--accent-green); font-size: 1.2rem; }
+
+        /* Categories */
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .category-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            color: white;
+            text-decoration: none;
+        }
+        .category-card img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1; transition: var(--transition);
+        }
+        .category-card:hover img { transform: scale(1.1); }
+        .category-card::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8)); z-index: -1;
+        }
+
+        /* Steps */
+        .steps-container { display: flex; flex-wrap: wrap; gap: 20px; counter-reset: step; }
+        .step-item {
+            flex: 1; min-width: 200px; position: relative; padding-top: 50px;
+        }
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute; top: 0; left: 0;
+            width: 40px; height: 40px; background: var(--primary-green);
+            color: white; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-weight: bold;
+        }
+
+        /* Cases */
+        .case-card {
+            background: white; border: 1px solid #eee; border-radius: 15px; overflow: hidden;
+            display: grid; grid-template-columns: 1fr;
+        }
+        .case-content { padding: 30px; }
+        .tag { display: inline-block; padding: 4px 12px; background: var(--soft-yellow); border-radius: 20px; font-size: 0.8rem; margin-bottom: 10px; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid #ddd; }
+        .faq-question {
+            width: 100%; padding: 20px 0; text-align: left; background: none; border: none;
+            font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;
+        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .faq-answer p { padding-bottom: 20px; color: #666; }
+
+        /* Contacts & Form */
+        .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-form {
+            background: white; padding: 40px; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit;
+        }
+        .form-sla { font-size: 0.9rem; color: #666; margin-top: 15px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .burger { display: flex; }
+            .contact-layout { grid-template-columns: 1fr; }
+            .hero-metrics { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">НОВЫЙ МИР</div>
+                <ul class="nav-links">
+                    <li><a href="#about">О компании</a></li>
+                    <li><a href="#categories">Оборудование</a></li>
+                    <li><a href="#how-we-work">Процесс</a></li>
+                    <li><a href="#cases">Кейсы</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+                <a href="#contacts" class="btn btn-primary" style="padding: 10px 20px;">Заказать звонок</a>
+                <div class="burger">
+                    <span></span><span></span><span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Профессиональное кухонное оборудование с гарантией результата</h1>
+            <p>Оснащаем рестораны, пекарни и столовые под ключ. От подбора одной единицы до проектирования целого цеха.</p>
+            
+            <div class="hero-metrics">
+                <div class="metric-item">
+                    <span>24 часа</span>
+                    на подбор и смету
+                </div>
+                <div class="metric-item">
+                    <span>до 24 мес</span>
+                    гарантия качества
+                </div>
+                <div class="metric-item">
+                    <span>100%</span>
+                    наличие запчастей
+                </div>
+                <div class="metric-item">
+                    <span>Бесплатно</span>
+                    выезд инженера
+                </div>
+            </div>
+
+            <div class="hero-btns">
+                <a href="#contacts" class="btn btn-secondary">Получить расчет стоимости</a>
+                <a href="#categories" class="btn btn-primary">Посмотреть категории</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section-padding container">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="grid-6">
+            <div class="benefit-card">
+                <h3>Экспертный подбор</h3>
+                <p>Не просто продаем, а выбираем оборудование под ваши технологические процессы и бюджет.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Прямые поставки</h3>
+                <p>Работаем с ведущими заводами без посредников, что дает вам лучшую цену на рынке.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Собственный сервис</h3>
+                <p>Бригада монтажников и сервисных инженеров на связи 24/7 для экстренного ремонта.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Проектирование</h3>
+                <p>Делаем расстановку оборудования согласно нормам СанПиН и пожарной безопасности.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Гибкая оплата</h3>
+                <p>Возможность покупки в лизинг или рассрочку для новых и действующих бизнесов.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Логистика</h3>
+                <p>Своя служба доставки — привезем и занесем оборудование в любую точку города.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding bg-soft">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2>О компании «Новый мир»</h2>
+                <p style="margin-bottom: 20px;">С 2012 года мы помогаем предпринимателям создавать прибыльные заведения. Мы начинали как небольшая сервисная служба, поэтому знаем оборудование «изнутри» — от каждого винтика до сложных плат управления.</p>
+                <p><strong>Наши ценности:</strong> честность перед клиентом, техническая грамотность и соблюдение сроков. Мы не продаем то, что завтра сломается.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="section-padding container">
+        <h2 class="section-title">Каталог оборудования</h2>
+        <div class="category-grid">
+            <a href="#contacts" class="category-card">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=500" alt="Тепловое">
+                <h3>Тепловое</h3>
+                <p>Печи, плиты, пароконвектоматы для идеальной готовки.</p>
+            </a>
+            <a href="#contacts" class="category-card">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=500" alt="Холодильное">
+                <h3>Холодильное</h3>
+                <p>Шкафы, столы и камеры для сохранения свежести.</p>
+            </a>
+            <a href="#contacts" class="category-card">
+                <img src="https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&q=80&w=500" alt="Электромеханическое">
+                <h3>Электромеханическое</h3>
+                <p>Миксеры, мясорубки и овощерезки для ускорения кухни.</p>
+            </a>
+            <a href="#contacts" class="category-card">
+                <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&q=80&w=500" alt="Нейтральное">
+                <h3>Нейтральное</h3>
+                <p>Столы, мойки и стеллажи из качественной стали.</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="how-we-work" class="section-padding bg-soft">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="steps-container">
+                <div class="step-item">
+                    <h4>Брифинг</h4>
+                    <p>Обсуждаем меню, посадку и размеры помещения.</p>
+                </div>
+                <div class="step-item">
+                    <h4>Подбор</h4>
+                    <p>Составляем спецификацию под ваш бюджет.</p>
+                </div>
+                <div class="step-item">
+                    <h4>Смета</h4>
+                    <p>Фиксируем итоговую стоимость и сроки в договоре.</p>
+                </div>
+                <div class="step-item">
+                    <h4>Поставка</h4>
+                    <p>Бережно доставляем оборудование со склада.</p>
+                </div>
+                <div class="step-item">
+                    <h4>Запуск</h4>
+                    <p>Монтируем, пусконаладка и обучение персонала.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases" class="section-padding container">
+        <h2 class="section-title">Реализованные проекты</h2>
+        <div class="grid-6">
+            <div class="case-card">
+                <div class="case-content">
+                    <span class="tag">Пекарня «Хлебный дом»</span>
+                    <h3>Замена печного парка</h3>
+                    <p><strong>Задача:</strong> Увеличить объем выпечки на 40% на тех же площадях.</p>
+                    <p><strong>Решение:</strong> Установка ротационных печей повышенной производительности.</p>
+                    <p><strong>Результат:</strong> Окупаемость проекта — 5 месяцев.</p>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-content">
+                    <span class="tag">Ресторан «Scandi»</span>
+                    <h3>Открытие с нуля</h3>
+                    <p><strong>Задача:</strong> Полное оснащение кухни премиального ресторана за 21 день.</p>
+                    <p><strong>Решение:</strong> Параллельная работа проектировщиков и службы логистики.</p>
+                    <p><strong>Результат:</strong> Запуск точно в срок к техническому открытию.</p>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-content">
+                    <span class="tag">Сеть столовых</span>
+                    <h3>Модернизация холода</h3>
+                    <p><strong>Задача:</strong> Снизить расходы на электроэнергию на 25%.</p>
+                    <p><strong>Решение:</strong> Замена старых агрегатов на современные инверторные системы.</p>
+                    <p><strong>Результат:</strong> Экономия 45 000 руб./мес на счетах за свет.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-soft">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Нам доверяют</h2>
+            <div class="hero-metrics" style="margin-bottom: 60px;">
+                <div class="metric-item" style="background: white;">
+                    <span style="color: var(--primary-green)">12 лет</span> на рынке HoReCa
+                </div>
+                <div class="metric-item" style="background: white;">
+                    <span style="color: var(--primary-green)">850+</span> проектов сдано
+                </div>
+                <div class="metric-item" style="background: white;">
+                    <span style="color: var(--primary-green)">15 000+</span> единиц в каталоге
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-around; flex-wrap: wrap; opacity: 0.6; gap: 30px;">
+                <span style="font-weight: bold; font-size: 1.5rem;">PARTNER LOGO</span>
+                <span style="font-weight: bold; font-size: 1.5rem;">PARTNER LOGO</span>
+                <span style="font-weight: bold; font-size: 1.5rem;">PARTNER LOGO</span>
+                <span style="font-weight: bold; font-size: 1.5rem;">PARTNER LOGO</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding container" style="max-width: 800px;">
+        <h2 class="section-title">Часто задаваемые вопросы</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Как быстро вы можете подобрать оборудование? <span>+</span></button>
+                <div class="faq-answer"><p>Стандартное коммерческое предложение мы готовим в течение 24 часов после получения технического задания.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Есть ли у вас гарантийное обслуживание? <span>+</span></button>
+                <div class="faq-answer"><p>Да, на все новое оборудование предоставляется гарантия от 12 до 24 месяцев. У нас свой сервисный центр.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Вы работаете с регионами? <span>+</span></button>
+                <div class="faq-answer"><p>Мы осуществляем доставку по всей стране через транспортные компании, а в соседние регионы возим своим транспортом.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Помогаете ли вы с проектированием кухни? <span>+</span></button>
+                <div class="faq-answer"><p>Да, наши технологи делают проект расстановки с учетом всех коммуникаций и требований ХАССП.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Что делать, если оборудование сломалось ночью? <span>+</span></button>
+                <div class="faq-answer"><p>Для клиентов на сервисном контракте у нас действует круглосуточная горячая линия экстренной поддержки.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Возможен ли лизинг? <span>+</span></button>
+                <div class="faq-answer"><p>Конечно. Мы сотрудничаем с 5 крупными лизинговыми компаниями, специализирующимися на оборудовании для бизнеса.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="section-padding container">
+        <div class="contact-layout">
+            <div>
+                <h2>Свяжитесь с нами</h2>
+                <p style="margin-bottom: 30px;">Оставьте заявку, и наш эксперт перезвонит вам для бесплатной консультации.</p>
+                <p><strong>Адрес:</strong> г. Москва, ул. Промышленная, 10, оф. 402</p>
+                <p><strong>Режим работы:</strong> Пн-Пт: 09:00 – 18:00</p>
+                <p><strong>Телефон:</strong> 8 (800) 555-35-35</p>
+                <div style="background: #eee; height: 300px; margin-top: 30px; border-radius: 15px; display: flex; align-items: center; justify-content: center;">
+                    [Карта: местоположение офиса]
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон / Мессенджер</label>
+                        <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Тип заведения</label>
+                        <select>
+                            <option>Ресторан / Кафе</option>
+                            <option>Пекарня / Кондитерская</option>
+                            <option>Столовая / Пищеблок</option>
+                            <option>Отель / Гостиница</option>
+                            <option>Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Город</label>
+                        <input type="text" placeholder="Укажите ваш город">
+                    </div>
+                    <div class="form-group">
+                        <label>Комментарий к проекту</label>
+                        <textarea rows="4" placeholder="Например: нужно оснастить кухню пекарни 50 кв.м."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary" style="width: 100%;">Отправить запрос</button>
+                    <p class="form-sla">✓ Перезвоним в течение 15 минут в рабочее время</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--primary-green); color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p>© 2024 ООО «Новый мир». Все права защищены. Информация на сайте не является публичной офертой.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const isOpen = answer.style.maxHeight;
+                
+                // Close all others
+                document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = null);
+                
+                if (!isOpen) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '80px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    if(window.innerWidth < 768) navLinks.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
